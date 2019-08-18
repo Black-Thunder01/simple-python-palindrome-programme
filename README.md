@@ -3,7 +3,7 @@
 
 This Simple Python Palindrome Identifying Programme(SPPIP), is a programme for dealing with and identifying whether a given string is a palindrome or not.
 
-If the string is a palindrome, the programme returns ```True```, if not the programme returns ```False```
+If the input string is a palindrome, the programme returns ```True```, if not the programme returns ```False```
 
 ## Usage
 
