@@ -1,4 +1,5 @@
-STATUS_OK = "OK"
+STATUS_PASS = "PASS"
+STATUS_FAIL = "FAIL"
 STATUS_ERROR = "ERROR"
 IS_PALINDROME = "String is Palindrome."
 IS_NOT_PALINDROME = "String is not Palindrome"

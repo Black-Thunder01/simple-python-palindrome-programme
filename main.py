@@ -6,8 +6,8 @@ Date: 17 August 2019
 import re
 import string as str_mod
 from constants import (
-    STATUS_OK,
-    STATUS_ERROR,
+    STATUS_PASS,
+    STATUS_FAIL,
     IS_PALINDROME,
     IS_NOT_PALINDROME
 )
@@ -16,9 +16,9 @@ def main(possible_palindrome):
     """ Check if included string is palindrome. """
     try:
         if palindrome(possible_palindrome):
-            return {STATUS_OK: IS_PALINDROME}
+            return {STATUS_PASS: IS_PALINDROME}
         else:
-            return {STATUS_OK: IS_NOT_PALINDROME}
+            return {STATUS_FAIL: IS_NOT_PALINDROME}
 
 
     except Exception as e:
@@ -27,9 +27,8 @@ def main(possible_palindrome):
 def palindrome(string):
     """ identify if string is palindrome or not.
     """
-    reverse = ""
-    for i in range(len(string)):
-        reverse += string[-(i+1)]
+    # whole text.
+    reverse = string[::-1]
 
     # letters.
     if map(reverse.lower())==map(string.lower()):
@@ -89,44 +88,3 @@ if __name__ == '__main__':
 
     hitman = "Murder for a jar of red rum."
     print("Hitman for hire: ", main(hitman))
-
-
-    poem = """
-        Entering the lonely house with my wife
-    I saw him for the first time
-    Peering furtively from behind a bush --
-    Blackness that moved,
-    A shape amid the shadows,
-    A momentary glimpse of gleaming eyes
-    Revealed in the ragged moon.
-    A closer look (he seemed to turn) might have
-    Put him to flight forever --
-    I dared not
-    (For reasons that I failed to understand),
-    Though I knew I should act at once.
-
-    I puzzled over it, hiding alone,
-    Watching the woman as she neared the gate.
-    He came, and I saw him crouching
-    Night after night.
-    Night after night
-    He came, and I saw him crouching,
-    Watching the woman as she neared the gate.
-
-    I puzzled over it, hiding alone --
-    Though I knew I should act at once,
-    For reasons that I failed to understand
-    I dared not
-    Put him to flight forever.
-
-    A closer look (he seemed to turn) might have
-    Revealed in the ragged moon.
-    A momentary glimpse of gleaming eyes
-    A shape amid the shadows,
-    Blackness that moved.
-
-    Peering furtively from behind a bush,
-    I saw him for the first time,
-    Entering the lonely house with my wife.
-    """
-    print("Poem: ", main(poem))
